@@ -1,22 +1,33 @@
-var ele = document.body.querySelector(".box");
-var eleAnswer =document.body.querySelector(".answer");
+var ele = document.body.querySelector(".ele");
 
-var question =prompt("Enter a number");
+var numOne =Number(prompt("Enter a number"));
 
-function milliseconds(x){
-    if (isNaN(x)){
-        return "Not a number!"
-    }
 
-}else{
+if(Number.isNaN(numOne)){
     ele.innerHTML="Invalid number, try again";
 }
 
-var qTwo=Operator(prompt("Enter an operator"));
-var qThree=Number(prompt("Enter a second number"));
+var qTwo=(prompt("Enter an operator"));
+if(qTwo=="+"||qTwo=="-"||qTwo=="*"||qTwo=="/"){
 
-if(qOne>2&&qTwo<50){
-    eleAnswer.innerHTML="The answer is 50";
 }else{
-    eleAnswer.innerHTML="Invalid number"
+    ele.innerHTML="That is not an operator, sorry!";
+}
+
+var qThree=Number(prompt("Enter a second number"));
+if(Number.isNaN(qThree)){
+    ele.innerHTML="Invalid number, try again";
+}
+if(qTwo=="+") {
+    var finalAdd=(numOne + qThree);
+    ele.innerHTML=`The answer is ${finalAdd}`;
+}else if(qTwo=="-") {
+    var finalSub=(numOne - qThree);
+    ele.innerHTML=`The answer is ${finalSub}`;
+}else if(qTwo=="*") {
+    var finalMult=(numOne * qThree);
+    ele.innerHTML=`The answer is ${finalMult}`;
+}else if(qTwo=="/") {
+    var finalDiv=(numOne / qThree);
+    ele.innerHTML=`The answer is ${finalDiv}`;
 }
